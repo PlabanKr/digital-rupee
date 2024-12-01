@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wallet, Loader2 } from 'lucide-react';
+import { Wallet, Loader2, ArrowLeftRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface WalletConnectProps {
   account: string;
@@ -40,6 +41,10 @@ export function WalletConnect({
               {`${account.slice(0, 6)}...${account.slice(-4)}`}
             </span>
           </div>
+          <Link to="/transactions" className="px-4 py-2 bg-[#1a1b2e] rounded-lg border border-[#2e305b] flex items-center gap-2 cursor-pointer">
+            <ArrowLeftRight className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium text-white">Transactions</span>
+          </Link>
         </div>
       ) : (
         <button
